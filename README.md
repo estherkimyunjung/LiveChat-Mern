@@ -1,3 +1,10 @@
+## MERN (stands for MongoDB, Express, React, Node)
+
+The app stack:
+MongoDB - document database.
+Express(.js) - Node.js(Server-side)
+React.js - JavaScript framework(client-side)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
