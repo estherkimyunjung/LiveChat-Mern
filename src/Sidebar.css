@@ -52,7 +52,9 @@
 }
 
 .sidebar__chats {
+  padding-right: 5px;
+  padding-left: 5px;
   flex: 1;
-  background-color: #fff;
   overflow: scroll;
+  background-color: #fff;
 }
