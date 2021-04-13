@@ -5,6 +5,7 @@ import MoreVert from "@material-ui/icons/MoreVert";
 import React, { useEffect, useState } from "react";
 import InsertEmoticon from "@material-ui/icons/InsertEmoticon";
 import MicIcon from "@material-ui/icons/Mic";
+import axios from "./axios";
 
 function Chat({ messages }) {
   const [input, setInput] = useState("");
@@ -14,9 +15,15 @@ function Chat({ messages }) {
     setSeed(Math.floor(Math.random() * 5000));
   }, []);
 
-  const sendMessage = (e) => {
+  const sendMessage = async (e) => {
     e.preventDefault();
     console.log("You typed :", input);
+    await axios.post("/api/v1/messages/new", {
+      message: input,
+      name: "Esther Kim",
+      timestamp: "I'm a demo timestamp...",
+      received: false,
+    });
     setInput("");
   };
 
