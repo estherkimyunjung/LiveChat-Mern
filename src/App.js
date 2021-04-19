@@ -36,7 +36,7 @@ function App() {
     };
   }, [messages]);
 
-  console.log(messages);
+  console.log(user);
 
   return (
     <div className="app">
@@ -56,7 +56,7 @@ function App() {
           </Switch>
         </Router> */}
           <Sidebar />
-          <Chat messages={messages} />
+          <Chat messages={messages} user={user} />
         </div>
       )}
     </div>

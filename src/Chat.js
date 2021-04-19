@@ -7,7 +7,7 @@ import InsertEmoticon from "@material-ui/icons/InsertEmoticon";
 import MicIcon from "@material-ui/icons/Mic";
 import axios from "./axios";
 
-function Chat({ messages }) {
+function Chat({ messages, user }) {
   const [input, setInput] = useState("");
   const [seed, setSeed] = useState("");
 
@@ -20,12 +20,13 @@ function Chat({ messages }) {
     console.log("You typed :", input);
     await axios.post("/api/v1/messages/new", {
       message: input,
-      name: "Esther Kim",
-      timestamp: "I'm a demo timestamp...",
+      name: user.displayName,
+      timestamp: user.metadata.lastSignInTime,
       received: false,
     });
     setInput("");
   };
+  console.log("user", user);
 
   return (
     <div className="chat">
